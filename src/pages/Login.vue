@@ -1,4 +1,37 @@
 <template>
-  <h1>You have to <a class="text-yellow-700 hover:text-yellow-900" href="/login">login</a> first!</h1>
+  <div class="m-3 flex flex-row items-center justify-center">
+    <Card title="Login to your FrappeUI App!" class="w-full max-w-md mt-4">
+      <form class="flex flex-col space-y-2 w-full" @submit.prevent="submit">
+        <Input
+          required
+          name="email"
+          type="text"
+          placeholder="faris@main.com"
+          label="User ID"
+        />
+        <Input
+          required
+          name="password"
+          type="password"
+          placeholder="••••••"
+          label="Password"
+        />
+        <Button :loading="session.login.loading" appearance="primary"
+          >Login</Button
+        >
+      </form>
+    </Card>
+  </div>
 </template>
-<script setup></script>
+
+<script lang="ts" setup>
+import { session } from '../data/session'
+
+function submit(e) {
+  let formData = new FormData(e.target)
+  session.login.submit({
+    email: formData.get('email'),
+    password: formData.get('password'),
+  })
+}
+</script>

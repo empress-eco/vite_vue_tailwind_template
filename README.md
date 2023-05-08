@@ -13,7 +13,7 @@ apps name is `todo`. Clone this template in the root folder of your app using `d
 
 ```
 cd apps/todo
-npx degit netchampfaris/frappe-ui-starter frontend
+npx degit NagariaHussain/doppio_frappeui_starter frontend
 cd frontend
 yarn
 yarn dev

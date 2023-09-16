@@ -6,7 +6,7 @@
           required
           name="email"
           type="text"
-          placeholder="faris@main.com"
+          placeholder="johndoe@email.com"
           label="User ID"
         />
         <Input
@@ -16,7 +16,7 @@
           placeholder="••••••"
           label="Password"
         />
-        <Button :loading="session.login.loading" appearance="primary"
+        <Button :loading="session.login.loading" variant="solid"
           >Login</Button
         >
       </form>
